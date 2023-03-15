@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+  }
+h2 {
+    text-align: center;
+  }
+ol {
+    width: 50%;
+  }
+body {
+    background-color: rgb(225, 155, 211);
+  }
+img {
+    float: right;
+    margin-left: 10px;
+  }
