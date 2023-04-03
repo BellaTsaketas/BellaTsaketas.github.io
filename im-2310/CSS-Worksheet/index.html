@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Styling with CSS</title>
+
+  <link rel="icon" type="image/png" href="favicons/favicon-32x32.png">
+
+    
+    <style>
+
+    body {
+      background-color:#14ffd4;
+    }
+
+    /* the box sections */
+    .section-box {
+      background-color:#c342ff;
+    }
+
+    p.highlights {
+      background-color:#eb00df;
+    }
+
+    h1 {
+      color: aliceblue;
+    }
+
+    a {
+      color: rgb(156, 171, 95);
+    }
+
+    a:active {
+      color: #7f71fe;
+    }
+
+    nav ul {
+      background-color: #87ff42;
+    }
+
+    ul li a:hover {
+      background-color: #3700eb;
+    }
+
+  </style> 
+
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+  
+
+</head>
+
+<body>
+
+  <h1>Styling with CSS</h1>
+
+  <!--
+    Due to the fact that we now have a navigation section on the page I have used two additional HTML elements that we didn't look at last week - the <nav> and 
+    <main> elements. While you can add styles to these as with other elements they are used here just as containers to seperate the different parts of the web 
+    page.
+  -->
+
+<nav id="nav-menu">
+
+    <a href="#howto">How to insert CSS</a>
+    <a href="#writingcss">Writing CSS Rulesets</a>
+    <a href="#selectors">Selectors</a>
+    <a href="#properties&values">Properties and Values</a>
+    <a href="thecascade">The Cascade</a>
+    <a href="#box">The Box Model</a>
+    <a href="#layouts">Creating Layouts</a>
+    <a href="#text">Text, Fonts and Links</a>    
+    <a href="#fav">Favicons</a>
+    <a href="#keytask">Key Task</a>
+
+</nav>
+
+<main>
+
+  <section id="howto" class="section-box">
+
+    <h2>How to insert CSS</h2>
+
+    <p>
+      Cascading style sheets (CSS) is a coding language that is used to control the styling of HTML documents. CSS is made up of <strong>rulesets</strong> - collections 
+      of rules that change the display of HTML elements in the web browser.
+    </p>
+
+    <p>There are three ways to style your HTML document using CSS - inline styling, internal style sheets and external style sheets.</p>
+
+    <!-- Below you can see the use of the <hr> and <br> elements - <hr> creates a horizontal rule and <br> creates a line break - neither need a closing tag -->
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>Inline</strong> styling is done by adding the <strong>style</strong> attribute directly inside the HTML tag of the element you want to change. In last 
+      week's worksheet you might have noticed this was how I added background colours to the &lt;section&gt; elements.
+    </p>
+
+    <br>
+
+    <p class="task-highlight" style="background-color: rgb(208, 133, 208);">
+      <strong>Task:</strong> The &lt;p&gt; for this paragraph currently has a style attribute with some CSS defining the background colour - try changing 
+      colour it's set to by replacing the word salmon with the name of another colour 
+      (<a href="https://www.w3.org/wiki/CSS/Properties/color/keywords" target="_blank">you can see a full list of recognised colour names here</a>).
+    </p>
+    
+    <br>
+    <hr>
+
+    <p>
+      <strong>Internal</strong> style sheets are created by adding a <strong>&lt;style&gt;</strong> element inside the <strong>&lt;head&gt;</strong> of your HTML 
+      document. This element tells the browser to read anything written inside of it as CSS instead of HTML.
+    </p>
+
+    <br>
+
+    <p class="task-highlight" style="background-color: salmon;">
+      <strong>Task:</strong>  You can see an example of internal CSS on lines 14 - 49 of this page's HTML document. These rules are not currently being applied to 
+      the web page because they're commented out (review last week's HTML worksheet if you want a refresher on what comments are). Delete <strong>both</strong> the 
+      &lt;!-- on line 13 and the --&gt; on line 50 to uncomment the code and apply the internal CSS. Remember you might need to save your file before the change is 
+      shown in the browser.
+    </p>
+
+    <br>
+    <hr>
+    
+    <p>
+      <strong>External</strong> style sheets are text files that are created with a <em>.css</em> file extension, usually placed in the same directory as the 
+      index.html. These files can then be linked to from the head of a HTML document as we did in our boilerplate and in the HTML document for this web page.
+    </p>
+
+    <br>
+
+    <p class="task-highlight" style="background-color: salmon;">
+      <strong>Task:</strong> below the internal CSS is an external CSS file import - line 53 of this web page's HTML document. To apply the external CSS uncomment 
+      it by import line by deleting <strong>both</strong> the &lt;!-- above and the --&gt; below the &lt;link&gt; element. Again remember you might need to save your 
+      file before the change is shown in the browser.
+    </p>
+
+    <br>
+    <hr>
+    
+    <p>
+      Each method has its place and uses in style web sites, though the majority of style is usually applied through the use of external style sheets.
+    </p>
+
+  </section>
+
+  <section id="writingcss" class="section-box">
+
+    <h2>Writing CSS Rulesets</h2>
+
+    <!-- The image below is from the MDN Article CSS Basics - https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics -->
+    <img src="images/css-declaration-small.png" width=50% alt="diagram of a CSS ruleset">
+
+    <p>
+      Instead of changing the style properties of HTML elements one at a time we can use CSS to group multiple rules together into a <em>ruleset</em> which can then be 
+      applied or removed from HTML elements as needed.
+    </p>
+
+    <p>CSS rulesets for internal or external stylesheets are written using the syntax seen here =&gt;</p>    
+
+    <p>
+      First we define what we want to change the style of by using a <em>selector</em> followed by curly brackets { } to indicate which rules apply to that selector.
+    </p>
+    
+    <p>
+      Then inside of the curly brackets we can declare one or more <em>property</em> and <em>value</em> pairs to change the element's display. Each property and value 
+      pair is seperated by a colon and completed with a semi-colon at the end of the line.
+    </p>
+
+    <p>
+      <strong>
+        ⚠️IMPORTANT NOTE⚠️ - HTML, CSS and JavaScript use American English spelling 🙄 while the instructions refer to using a colour but be sure to spell it color in
+        your attributes and CSS.
+      </strong>
+    </p>
+
+    <p>
+      As we've already seen writing inline CSS works with the same property and value pairs but instead of writing your rules inside of a selector's curly brackets you 
+      write them inside of the "" after the style attribute inside of the HTML element's tag.
+    </p>
+
+    <br>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Open your style.css file in VS Code alongside your HTML and look for the ruleset for each section's container on lines 130 - 142. Try 
+      changing the word solid on line 134 to the word groove then save your file and see how it has changed the style of the page in the browser. Now try adding a new 
+      rule inside the brackets by adding a new line just below the overflow property - we can change the font within each section by using the property font-family and 
+      a value of a name of a font - in this case 'Work Sans'. Your new line of CSS should look like this: 
+    </p>
+
+    <code>
+      font-family: 'Work Sans';
+    </code>
+
+  </section>
+
+  <section id="selectors" class="section-box">
+
+    <h2>Selectors</h2>
+
+    <p>Selectors indicate which HTML elements you want a particular ruleset to apply to. All of the following can be used as selectors:</p>
+    
+    <br>
+    <hr>
+    
+    <p>
+      <strong>elements</strong> - you can style all instances of a given HTML element - selected with CSS by using the name of the element in the following way:
+    </p>
+
+    <code class="orange-border">
+      <em>elementname</em> {
+        <br><br>
+      } 
+    </code>
+
+    <p>for example to change the font-size of all &lt;h1&gt; elements you could write:</p>
+
+    <code>
+      &lt;!-- HTML --&gt;
+      <br>
+      &lt;h1&gt;This heading's font should be 16px&lt;/h1&gt;
+    </code>
+
+    <br>
+    
+    <code>
+      /* CSS */
+      <br>
+      h1 { 
+        <br>
+        &nbsp;&nbsp;font-size: 16px;
+        <br>
+      }
+    </code>
+
+    <br>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Add a new ruleset at the bottom of your style.css file that changes the size of the font for all &lt;h1&gt; elements to 80px.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>classes</strong> - you can group different elements together by adding the <em>class</em> attribute inside their HTML tag - selected with CSS by using the 
+      name of the class preceded by a . in the following way:
+    </p>
+
+    <code class="orange-border">
+      .<em>classname</em> { 
+        <br><br>
+       }
+    </code>
+
+    <p>for example to add a white border to all of the elements belonging to the class called white-border you could write:</p>
+      
+    <code>
+      &lt;!-- HTML --&gt;
+      <br>
+      &lt;img class="white-border" src="./fakeImageFile.png" alt="A fake image file made up for the exercise"&gt;
+      <br>
+      <br>
+      &lt;p class="white-border"&gt;this paragraph will also have the same CSS ruleset applied to it&lt;/p&gt;
+    </code>
+
+    <br>
+    
+    <code>
+      /* CSS */
+      <br>
+      .white-border { 
+        <br>
+        &nbsp;&nbsp;border: 2px solid white;
+        <br>
+       }
+    </code>
+
+    <br>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Add a new ruleset at the bottom of your style.css file that adds a 2px solid orange border to all the elements belonging to the 
+      orange-border class. After that try adding the class to the &lt;code&gt; tag on line 259 of the HTML document for this page.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>ids</strong> - you can select an individual element by adding the <em>id</em> attribute inside their HTML tag - selected with CSS by using the name of 
+      the id preceded by a # in the following way:
+    </p>
+
+    <code class="orange-border">
+      #<em>idname</em> { 
+        <br><br>
+       }
+    </code>
+
+    <p>
+      for example to change the background colour of the element with the id of my-list you could write:
+    </p>
+
+    <code>
+      &lt;!-- HTML --&gt;
+      <br>
+      &lt;ul id="my-list"&gt;
+      <br>
+      &nbsp;&nbsp;&lt;li&gt;This list's&lt;/li&gt;
+      <br>
+      &nbsp;&nbsp;&lt;li&gt;background should&lt;/li&gt;
+      <br>
+      &nbsp;&nbsp;&lt;li&gt;be plum&lt;/li&gt;
+      <br>
+      &lt;/ul&gt;
+      <br>
+      <br>
+      &lt;ul&gt;
+      <br>
+      &nbsp;&nbsp;&lt;li&gt;This list's&lt;/li&gt;
+      <br>
+      &nbsp;&nbsp;&lt;li&gt;background won't&lt;/li&gt;
+      <br>
+      &nbsp;&nbsp;&lt;li&gt;be plum&lt;/li&gt;
+      <br>
+      &lt;/ul&gt;
+    </code>
+
+    <br>
+
+    <code>
+      /* CSS */
+      <br>
+      #my-list { 
+        <br>
+        &nbsp;&nbsp;background-color: plum;
+        <br>
+       }
+    </code>
+
+    <br>
+
+    <p id="id-task" class="task-highlight">
+      <strong>Task:</strong> Add a new ruleset at the bottom of your style.css file that changes the background colour of this paragraph to plum. You'll need to 
+      check the &lt;p&gt; element's id in the HTML document.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>Multiple selectors</strong> can be used for one ruleset by using a comma seperated list - for example to add a white border to all of the 
+      &lt;p&gt; elements, all of the elements belonging to the class called white-border, and the element with the id of my-list you could write:
+    </p>
+
+    <code>
+      /* CSS */
+      <br>
+      p, .white-border, #my-list { 
+        <br>
+        &nbsp;&nbsp;border: 2px solid white;
+        <br>
+       }
+    </code>
+
+    <br>
+    <hr>
+
+    <p>
+      There are even more advanced and dynamic ways of selecting elements for styling with CSS. We'll be using a few of these techniques during our assignment 2 
+      exercises but for now if you're curious to read more 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN has information on all the different ways to use CSS selectors</a>.
+    </p>
+
+  </section>
+
+  <section id="properties&values" class="section-box">
+
+    <h2>Properties and Values</h2>
+
+    <p>
+      We've already used a few common examples of property/value pairs in our CSS such as <em>background-color: plum;</em> but there are many more possibilities. As 
+      you can see <a href="https://www.w3schools.com/cssref/" target="_blank">the list of available CSS properties</a> is long but they are often named directly for 
+      what they do so using a search engine to find their MDN page is often as simple as searching for css plus what you want it to do plus MDN, eg: searching for 
+      <em>css transparency mdn</em> will return the page for the opacity property.
+    </p>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Try working out what CSS property/value pair will give rounded corners to elements with the section-box class and then add it to the 
+      ruleset applied to that class.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      While there are a large number of properties many of them expect similar types of values such as colours, lengths or percentages. CSS supports a 
+      range of possible values for these types, eg: a colour can be defined through the use of a colour name but also an RGB value. Check out the reference pages below 
+      to get an idea of what format these common values expect.
+    </p>
+
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" target="_blank">Percentage</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" target="_blank">Length</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank">Color</a></li>  
+    </ul>
+
+    <p>
+      Some other CSS properties will need specific keyword values instead of these generic types - for example <em>border-style</em> only accepts the key words like 
+      <em>groove</em>, <em>ridge</em> and <em>dashed</em> as values. If you're unsure the best way to check what these values a property expects is to look at the its 
+      MDN documentation.
+    </p>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Find the ruleset applied to the &lt;a&gt; elements in this page's style.css file which currently contains a text-decoration property with 
+      the value of none. Work out what to change this value to so that all the links will instead have a white dotted underline.
+    </p>
+
+    <br>
+    <hr>
+    
+    <p>
+      <strong>Tip</strong> - VS Code has a useful context sensitive autocomplete feature, if you start typing the property or value in CSS it'll pop up with appropriate 
+      suggestions, very handy if you think you know the property or value but can't quite remember it's exact name off the top of your head.    
+    </p>
+
+  </section>
+
+  <section id="thecascade" class="section-box">
+
+    <h2>The Cascade</h2>
+
+    <p>
+      Cascading style sheets are named after the process of compiling (combining) the style information from all of the above methods used in your code, along with the 
+      default rules as defined by your browser. The is referred to as the <em>cascade</em> as CSS rules will override other CSS rules depending on what method you used 
+      to define them and what order they were written in your code. 
+    </p>
+
+    <p>
+      As with HTML, CSS reads left to right, top to bottom, so if there's any conflicting rules the last value read (usually the closest to the bottom) on the page 
+      will be used. On top of this there is an order in which they are applied based on where or how they are written:
+    </p>
+
+    <ol>
+      <li>
+        <strong>Browser defaults</strong> - all HTML elements have hidden default CSS styles, this is why some use block display while others are inline as we looked 
+        at last week. The defaults are actually slightly different across browsers which is the reason some web pages look different in Chrome vs Firefox. If you're 
+        interested to see the rules <a href="https://browserdefaultstyles.com/" target="_blank">this site</a> will show you a comprehensive list of an element's 
+        default CSS rules in each different browser.
+      </li>
+
+      <li>
+        <strong>External and internal style sheets</strong> - whichever &lt;link&gt; import or &lt;style&gt; tag is lower in the HTML document will be read later and 
+        therefore override any others if there's a conflict
+      </li>
+
+      <li>
+        <strong>Inline style</strong> - any CSS declared with the <em>style</em> attribute inside of a HTML element will override anything from a &lt;link&gt; import or 
+        &lt;style&gt; tag
+      </li>
+    </ol>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Move the &lt;link&gt; tag on line 50 of the HTML source code above the opening of the &lt;style&gt; tag and notice how the placment order 
+      can be used to override certain styles.
+    </p>
+
+    <p>
+      In addition both specificity and inheritance can change which CSS rule will be applied to an element if there's a conflict - please read 
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance" target="_blank">this article</a> for further details.
+    </p>
+
+    <p>
+      The way CSS overrides itself can be tricky to keep track of but is an important feature of how the language is used to change the style of the web page in 
+      different contexts. Later this semester we will be looking at how we can take advantage of this to create responsive and dynamic designs but for now you 
+      shouldn't have to worry about it too much.
+    </p>
+
+  </section>
+
+  <section id="box" class="section-box">
+
+    <h2>The Box Model</h2>
+
+    <img src="images/box.jpg" width="50%" alt="diagram of CSS box model">
+
+    <p>
+      All HTML elements can be thought of as boxes when displayed on the web page and each has the following parts shown in the image to the right - <em>content</em>, 
+      <em>padding</em>, <em>border</em> and <em>margin</em>.
+    </p>
+
+    <br>
+    <hr>
+
+    <p><strong>content</strong> - space taken up by whatever is inside the element, be that text, image or another element</p>
+
+    <p><strong>padding</strong> - the space between the content and the border</p>
+
+    <p><strong>border</strong> - you can render a border around the element in a range of styles and sizes</p>
+
+    <p><strong>margin</strong> - the space between the border and other elements on the web page</p>
+
+    <br>
+    <hr>
+
+    <p>
+      The size of each of these seperate parts can be changed by using their associated CSS property of the same name. These properties take either a percentage or 
+      length value, you should refer to the links provided in the previous section for more detail on each but it's common to use either absolute units like px or 
+      relative units like %, vw/vh or even rem. Some HTML elements will come with a default value for these properties but they can easily be overwritten using CSS. 
+      You can also address the different sides individually by using their own properties, eg: margin-bottom: 12px; will only set the margin on the bottom of the 
+      element to 12px.
+    </p>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Use padding, border and margin to add some spacing to help structure your a1 research project page. If you don't know what values to use 
+      experiment and look online at how this page and other websites use these properties for clear information design.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>Tip</strong> - Borders need a few different properties before they'll show up, <em>border-styles</em>, <em>border-color</em> and <em>border-width</em>. 
+      You can declare each seperately as seen in the source code for this page or if you want to get more advanced you can declare them all together in the 
+      <em>border</em> property - check the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border" target="_blank">MDN page on CSS borders</a> for more 
+      details and examples of how this works.
+    </p>
+
+  </section>
+
+  <section id="layouts" class="section-box">
+
+    <h2>Creating Layouts</h2>
+
+    <p>
+      While we can use the box model to control the spacing within elements themselves making sure those elements are placed where you want them in relation to the 
+      overall layout can be a surprisingly tricky task at first - but once you become familiar with a few key CSS properties you'll be able to construct any page 
+      structure you might need.
+    </p>
+    
+    <br>
+    <hr>
+
+    <p>
+      <strong>display</strong> - in last week's worksheet we covered how elements can be displayed as either <em>inline</em> or <em>block</em>, both of which are 
+      values you can change using the CSS <em>display</em> property. 
+    </p>
+    
+    <code>
+      /* CSS */
+      <br>
+      .inline-example { 
+        <br>
+        &nbsp;&nbsp;display: inline;
+        <br>
+       }
+       <br>
+       <br>
+       .block-example { 
+        <br>
+        &nbsp;&nbsp;display: block;
+        <br>
+       }
+    </code>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>max-width</strong> - allows you to define how much horizontal space your block elements take up, as you can see in the ruleset for section-box class in 
+      this page's style.css file. Note that while the CSS property <em>width</em> exists in most cases you'll want to use <em>max-width</em> instead as it handles 
+      smaller windows better by default. 
+    </p>
+
+    <code>
+      /* CSS */
+      <br>
+      .width-example { 
+        <br>
+        &nbsp;&nbsp;max-width: 80%;
+        <br>
+       }
+    </code>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>overflow</strong> - controls what happens when an element's content needs more space then element itself. By default the content will overflow outside the edge of the 
+      element as seen in the below recreation of a common meme about CSS.
+    </p>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Find the ruleset for the "overflow-meme" class in this page's style.css file and try adding an overflow property with the value of 
+      <em>hidden</em> or <em>auto</em> - notice how each of these values changes the way the element handles overflowing content.
+    </p>
+
+    <br>
+
+    <!-- the following code is adapted from Brandon Smith's article on a popular CSS meme https://css-tricks.com/css-is-awesome/ -->
+
+    <p class="overflow-meme">
+      CSS IS AWESOME
+    </p>
+
+    <!-- this meme is from u/splatterghost on reddit https://www.reddit.com/r/ProgrammerHumor/comments/a6rkoa/the_pains_of_css/ -->
+
+    <br>
+    <hr>
+
+    <img id="meme" src="images/css-float-meme.png" style="max-width: 10rem; margin-left: 1rem;" alt="shocked pikachu meme about CSS changes">
+
+    <p>
+      <strong>float</strong> - is used to place an element on either the left or right side of its parent element container and allows text or other inline elements to 
+      wrap around it in a specific way - like the image to the right of this text.
+    </p>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> All of the &lt;img&gt; elements on this page have a float value of right as defined by the element selector in the CSS file. This 
+      can be overridden by assigning a different float value in the inline style attribute in the HTML file. Try changing the float value of this particular 
+      &lt;img&gt; to <em>left</em> using inline CSS.
+    </p>
+    
+    <br>
+    <hr>
+
+    <p>
+      While the above properties will get you a long way in creating a page layout there are two slightly more advanced ways to go about structuring your page that are more 
+      commonly used on modern web pages, <em>flex</em> and <em>grid</em>. Both are values you can give the display property - we will look at grid in a bit more detail 
+      later in the semeseter but for now let's briefly introduce flex as its a handy way to centre your elements in a neat and ordered layout.
+    </p>
+
+    <p>
+      <strong>flex</strong> - when used as a value for the display property it creates a flexbox layout which automatically arranges the child elements inside the 
+      parent element assigned as flex.
+    </p>
+
+    <code>
+      /* CSS */
+      <br>
+      .flex-container-example { 
+        <br>
+        &nbsp;&nbsp;display: flex;
+        <br>
+        &nbsp;&nbsp;flex-direction: column;
+        <br>
+        &nbsp;&nbsp;justify-content: space-around;
+        <br>
+        &nbsp;&nbsp;align-items: center;
+        <br>
+       }
+    </code>
+
+    <div class="flex-container-example">
+      <span class="flex-item-container">item one</span>
+      <span class="flex-item-container">item two</span>
+      <span class="flex-item-container">item three</span>
+    </div>
+
+    <p>
+      The above code is an example of some CSS properties you might assign to a HTML container element (commonly referred to as a flex container) which you want use to 
+      arrange its child elements (items inside a flex container are called flex items). It tells the container to arrange its contents using flex (display: flex;), to 
+      order those contents in a vertical downward direction (flex-direction: column;), to keep and equal amount of space between each flex item inside of it 
+      (justify-content: space-around;) , and finally to align each flex item in the center (align-items: center;).
+    </p>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Write a CSS ruleset the same as the example above in your style.css file and see how it changes the layout of the item list.
+    </p>
+
+    <p>
+      This might seem like a lot of properties and values to keep track of but once you get the hang of it flex will become a useful tool in creating layouts that 
+      respond to different window sizes. For a more detailed rundown of how flexbox operates I'd highly recommend reading through MDN's 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">basic concepts of flexbox</a>. CSS 
+      tricks also have a helpful visual guide to explain each flex related property - 
+      <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank"> A Complete Guide to Flexbox</a>. I'd recommend bookmarking this site and using 
+      it whenever you want to use a flex layout, something I still do when creating my own websites. 
+    </p>
+
+    <p class="task-highlight"><strong>Task:</strong> Continue to work on the structure and information design of your a1 research project page by controlling the 
+      overall layout using display, max-width, overflow, float or flex where appropriate.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>Tip</strong> - Keeping elements centred without flex is little trickier than you might expect, the subject of many popular programming memes. I've used a 
+      slightly older trick on this page rather than flex to centre the sections. I'm using a combination of two CSS rules - <em>max-width: 67%; margin: 0 auto;</em> 
+      which sets the section's width to two thirds of their parent element's width and then sets both the left and right margins to equally split the remaining third 
+      using the <em>auto</em> value.
+    </p>
+
+  </section>
+
+  <section id="text" class="section-box">
+
+    <h2>Text, Fonts and Links</h2>
+
+    <p>CSS is also used to style text, select which fonts are used and how links are dynamically styled.</p>
+    
+    <br>
+    <hr>
+    
+    <p>
+      Styling text is relatively straight forward it can be <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color" target="_blank">coloured</a>, 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="_blank">aligned</a> and 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="_blank">decorated</a>.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      Fonts are set by specifying a particular font using the <em>font-family</em> property as we did in the Writing CSS Rulesets section. While we can set a specific 
+      font to each element you its often easier to apply the property to the &lt;body&gt; element so it's inherited by all of its children.
+    </p>
+    
+    <p>
+      A chosen font will only work if it's installed on the user's computer - common fonts such as Times New Roman or Georgia, and generic families such as such as 
+      serif and sans-serif are all what's known as 
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#web_safe_fonts" target="_blank">web safe fonts</a> and can reasonably be 
+      expected to be installed on any computer system.
+    </p>
+
+    <p>
+      If you want to use a custom font that's not web safe you need to make sure to import it, either providing the font file itself or linking to where it can be 
+      found online. This can be done using the <em>@font-face</em> CSS selector to define a specific font as seen below.
+    </p>
+
+    <code>
+      /* CSS */
+      <br>
+      /* this is an example of linking from a local font file
+      <br>
+      @font-face {
+        <br>
+        &nbsp;&nbsp;font-family: 'Work Sans';
+        <br>
+        &nbsp;&nbsp;src: url(fonts/WorkSans-Regular.ttf);
+        <br>
+      }
+      <br>
+      <br>
+      /* this is an example of linking from an online location
+      <br>
+      @font-face {
+        <br>
+        &nbsp;&nbsp;font-family: 'Rubik Iso', cursive;
+        <br>
+        &nbsp;&nbsp;src: url(https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap);
+        <br>
+      }
+    </code>
+
+    <p>
+      Note that you'll need to use the <em>font-family</em> property to define a name of your choice for the font (this is then what's used as a value in other 
+      rulesets when setting the font-family property) and the <em>src</em> property to link to your font file, which will usually have a .woff, .woff2 or .ttf 
+      extension. Once placed at the top of your CSS file the <em>@font-face</em> will let you use the font in other rulesets by using the name you chose.
+    </p>
+
+    <p>
+      You can then also specify <em>font-size</em> using either <em>px</em>, <em>em</em> or <em>rem</em> units. Due to their relative nature <em>em</em> and 
+      <em>rem</em> can be very useful as they will both scale based on the user's browser and operating system settings, so if they have text scaling enabled it would 
+      also be applied on the web page.
+    </p>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>Tip</strong> - There are many places to find open-source fonts online, while Google Fonts can be a great resource the amount of different fonts can be 
+      overwhelming if you don't have a specific thing you're looking for. Sometimes smaller collections like 
+      <a href="https://open-foundry.com" target="_blank">Open Foundary</a> or <a href="https://velvetyne.fr/" target="_blank">Velvetyne</a> can be more inspiring - 
+      just don't forget to check their terms of use, while free some require you to credit the type designer or foundry where appropriate.
+    </p>
+
+    <br>
+    <hr>    
+
+    <p>
+      The same font and text styling works for &lt;a&gt; elements but because links also involve different interactive <strong>states</strong> we can use some further 
+      variations on CSS selectors called pseudo selectors to change their style based on these states. Each of the rulesets below would only be applied if the 
+      &lt;a&gt; element meets the noted state requirements:
+    </p>
+
+    <code>
+      /* CSS */
+      <br>
+      /* :link is an unvisited link */
+      <br>
+      a:link { 
+        <br>
+        color: red;
+        <br>
+       }
+      <br>
+      <br>
+      /* :visited is a link the user has previously clicked */
+      <br>
+      a:visited { 
+        <br>
+        color: blue;
+        <br>
+       }
+      <br>
+      <br>
+      /* :hover is applied when the user hovers the cursor over it */
+      <br>
+      a:hover { 
+        <br>
+        color: green;
+        <br>
+       }
+      <br>
+      <br>
+      /* :active a link the moment it is clicked */
+      <br>
+      a:active { 
+        <br>
+        color: yellow;
+        <br>
+       }
+    </code>
+
+    <br>
+    <hr>
+
+    <p>
+      <strong>Tip</strong> - Not all pseudo selectors will work for every element, however some like :hover can generally be used across the board. As with all CSS the 
+      order in which the rulesets are placed matters (see The Cascade section) so make sure to write any pseudo selectors underneath the ruleset of the base selector in your 
+      CSS file.
+    </p>
+
+    <br>
+    <hr>
+    
+    <p class="task-highlight">
+      <strong>Task:</strong> Style the text and links in your a1 research project page and then download and include an open-source font on your page using the 
+      @font-face selector.
+    </p>
+
+  </section>
+
+  <section id="fav" class="section-box">
+
+    <h2>Favicons</h2>
+
+    <p>Favicons are small images used to represent websites in browser tabs alongside the text defined in the &lt;title&gt; element.</p>
+
+    <p class="task-highlight">
+      <strong>Task:</strong> Figure out how to add a favicon to your a1 research project page that will appear in the browser tab it opens in. If you're stuck on what 
+      favicon you want to use you can generate one using the link found in the week 3 module on canvas.
+    </p>
+
+  </section>
+
+  <section id="keytask" class="section-box">
+
+    <h2>Key Task for the Week</h2>
+
+    <p>
+      Your a1 research project page's style.css should now be on it's way to being appropriately styled and laid out. Continue to add and revise your styling to make sure 
+      it's appropriate for the context of communicating your research information ahead of your final submission. You shouldn't need to make huge changes - while I'd love 
+      to see you express yourself through the stylistic design it by no means needs to be complicated, sometimes simple is best when focusing on information design for clear 
+      communication.
+    </p>
+
+  </section>
+
+</main>
+
+</body>
+
+</html>

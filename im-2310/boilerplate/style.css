@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    margin: 0;                                        
+   }
+   
+   :root{
+    --col01: rgb(0,0,0);
+    --col02: rgb(86, 86, 86);
+    --col03: rgb(185,185,185);
+    --col04: rgb(225,225,225);
+    --border: groove 10px var(--co102);
+   }
+   

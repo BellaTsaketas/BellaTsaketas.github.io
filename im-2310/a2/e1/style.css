@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+    margin: 0;                                        
+   }
+   
+   :root{
+    --col01: rgb(0,0,0);
+    --col02: rgb(86, 86, 86);
+    --col03: rgb(185,185,185);
+    --col04: rgb(225,225,225);
+    --border: groove 10px var(--co102);
+   }
+
+
+   @media print {
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      margin: 0;
+      padding: 0;
+    } }
+    
+   body {
+   zoom: 140%;
+   margin: 0;
+   }    
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: auto;
+    }
+
+  .container > div {
+    height: 150mm;
+    display: flex; 
+    gap: 10px;
+  }
+  
+.box1 {
+    background-color: rgb(212, 111, 192);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:75mm;
+    width: 50mm;
+    position: relative;
+    z-index: 1;
+    right: 5mm;
+  }
+
+  .box2 {
+    background-color: rgb(71, 45, 66);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height: 55mm;
+    width: 53mm;
+    position: relative;
+    z-index: 1;
+    right:-15mm;
+  }
+   
+  .box3 {
+    background-color: rgb(255, 0, 0);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:108mm;
+    width: 43mm;
+    position: relative;
+    z-index: 1;
+    right: -63px;
+  }
+
+  .box4 {
+    background-color: rgb(132, 24, 198);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:55mm;
+    width: 50mm;
+    position: relative;
+    z-index: 2;
+    top: -100mm;
+    left: -32mm;
+  }
+
+  .box5 {
+    background-color: rgb(93, 26, 188);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:65mm;
+    width: 55mm;
+    position: relative;
+    z-index: 2;
+    top: -110mm;
+    left: -24mm;
+  }
+
+  
+
+ .box6 {
+    background-color: rgb(208, 121, 50);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:40mm;
+    width: 177.9mm;
+    flex-grow: 1;
+    position: relative;
+    z-index: 3;
+    top: -193mm;
+    left: 3mm;
+    }
+
+
+  .box7 {
+    background-color: rgb(76, 196, 88);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:68mm;
+    width: 63mm;
+    position: relative;
+    z-index: 2;
+    top: -283mm; 
+    left: 25mm;
+  }
+
+  .box8 {
+    background-color: rgb(216, 214, 61);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:75mm;
+    width: 95mm;
+    position: relative;
+    z-index: 1;
+    top: -301mm; 
+    left: -20mm;
+  }
+
+  .box9 {
+    background-color: rgb(72, 145, 177);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    height:86mm;
+    width: 58mm;
+    position: relative;
+    z-index: 1;
+    top: -301mm; 
+    left: -18.8mm;
+  }
+

@@ -1,0 +1,208 @@
+/* Comments in CSS are written like this */
+
+/*
+Due to the cascade and specificity (see The Cascade section of the worksheet) I tend 
+to organise my CSS files in an order that reflects this with element selectors at the 
+top, followed by classes and then ids. In more complex projects I sometimes change this 
+and instead orgainse the CSS by how they are laid out on the page/s.
+*/
+
+/* 
+This is a selector I didn't cover in the worksheet but * refers to all elements.
+if we place it first like this it will override some of the browser's default style but 
+won't mess with any of the custom rules I apply below it.
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url(fonts/WorkSans-Regular.ttf);
+}
+
+body {
+  color: #e2d5c0;
+  background-color: #4d48bd;
+  font-family: "Helvetica", sans-serif;
+}
+
+nav {
+  margin: auto;
+  font-family:'Work Sans';
+}
+
+pre {
+  font-family: spaceMono;
+}
+
+div,
+nav, section {
+  box-shadow: 5px 5px 15px #000000;
+}
+
+strong {
+  font-weight: bolder;
+  color: #ffa425;
+}
+
+code {
+  display: block;
+  background-color:#0d0d15;
+  border: 2px solid #e2d5c0;
+  padding: 0.5rem;
+}
+
+h1 {
+  max-width: fit-content;
+  font-size: 3rem;
+  margin: 25px auto;
+  margin-bottom: 50px;
+  font-family: 'Work Sans';
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2rem;
+  border-style: double;
+  border-color: #e2d5c0;
+  border-width: 0 0 3px 0;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: dotted underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: #fe71be;
+}
+
+img {
+  float: right;
+}
+
+ul, ol {
+  list-style-position: inside;
+  padding-top: 15px;
+  font-size: 1.25rem;
+}
+
+/*
+This is another new selector combination not covered in the worksheet - 
+putting two selectors together without a comma means that it will be applied 
+to the child of the first selector - so this ruleset will only work on <li> 
+elements that are inside of <ol> elements, not those inside <ul>.
+*/
+ol li {
+  margin-bottom: .5rem;
+}
+
+p {
+  font-size: 1.25rem;
+  text-align: left;
+  padding-top: 15px;
+}
+
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 80%;
+  padding: 25px;
+  background-color: #4d48bd;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  border: 5px #e2d5c0 solid;
+}
+
+/* the box sections */
+.section-box {
+  max-width: 80%;
+  display: block;
+  background-color:#4d48bd;
+  border-style: groove;
+  border-color: #e2d5c0;
+  border-width: 5px;
+  padding: 25px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  overflow: auto;
+  font-family: 'work sans';
+}
+
+#nav-menu a {
+  display: block;
+  color: #e2d5c0;
+  font-size: 1.75rem;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+#nav-menu a:hover {
+  background-color: #e2d5c0;
+  color:#4d48bd;
+}
+
+.task-highlight{
+  background-color: #e2d5c0;
+  color:#6a62fd;
+  padding: 0.5rem;
+}
+.task-highlight strong{
+  color:#6a62fd;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #6a62fd;
+}
+
+.overflow-meme {
+  font-size:64px;
+  font-family: unset;
+  background-color: white;
+  color: black;
+  border:4px solid black;
+  padding:0px 3px;
+  margin-bottom: 1rem;
+  max-width:220px;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.orange-border {
+  border: 2px solid orange
+}
+
+#id-task {
+  background-color: plum;
+}
+
+.section-box {
+  border-radius: 25px;
+}
+
+#meme
+{
+  float: left;
+}
+
+.flex-container-example {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

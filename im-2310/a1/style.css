@@ -1,16 +1,79 @@
+body {
+  background-color: #EB455F;
+}
 h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 80px;
     text-align: center;
+    letter-spacing: -2px;
+    color:#2B3467;
   }
 h2 {
-    text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
+  text-align: center;
+  margin-top: -30px;
+  letter-spacing: -2px;
+  color:#2B3467;
   }
-ol {
-    width: 50%;
-  }
-body {
-    background-color: rgb(225, 155, 211);
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+h4 {
+  font-family:'Lucida Sans Regular';
+  font-size: 25px;
+  text-align: left;
+  letter-spacing: -2px;
+  margin-left: -37px;
+  color: #2B3467;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2B3467;
   }
 img {
-    float: right;
-    margin-left: 10px;
+  width: 80%;
+  height: auto;
   }
+.text-container {
+  float: left;
+  margin-top: 30px;
+  font-family: "calibri", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #BAD7E9;
+  }
+.text-container img {
+  float: right;
+  margin-left: -20px;
+  margin-bottom: 10px;
+  width:1000px;
+  height: auto;
+  }
+.text-container2 {
+  font-family: "calibri", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #BAD7E9;
+  }
+.text-container3 {
+  font-family: "calibri", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #BAD7E9;
+ } 
+.text-container4 {
+  font-family: "calibri", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color:#BAD7E9;
+  } 
+p {
+  font-size: 22px;
+}
