@@ -3,159 +3,166 @@
     margin: 0;                                        
    }
    
-   :root{
-    --col01: rgb(0,0,0);
-    --col02: rgb(86, 86, 86);
-    --col03: rgb(185,185,185);
-    --col04: rgb(225,225,225);
-    --border: groove 10px var(--co102);
-   }
+   :root {
+    --col01:  rgb(210, 47, 196);
+    --col02:  rgb(255, 0, 132);
+    --col03:  rgb(210, 47, 196);
+    --col04:  rgb(229, 123, 216);
+   /*While we weren't required to connect our design choices to the original layout, I felt inspired by my love for Sailor Moon
+   to infuse my own personal meaning of the anime into my work. For me, Sailor Moon symbolizes female strength, love, and friendship – 
+   a beacon of empowerment for young girls. That's why I decided to use a pink gradient background. To me, pink is not just a "girly" colour; 
+   it represents the harmony, playfulness, and girl power that Sailor Moon embodies.*/
 
+    --col05:  rgb(220, 238, 241, 0.7);
+    --border:  3px dotted rgb(0, 255, 123); /*green colour border to represent sailor jupiter - the orange represents sailor moons iconic hair, the blue and red represent her outfit*/ 
+    --box-shadow:  inset rgb(255, 0, 1) 0 0 0 2px, inset rgb(10, 68, 159) 0 0 0 5px, inset rgba(249,255,0,1) 0 0 0 8px;
+}
+  /*I opted for the dotted style because it adds a textural difference that helps to break up the design and create visual interest.
+   In addition, the dotted style reduces the strong contrast that solid lines can create, resulting in a more subtle and balanced design.*/
 
-   @media print {
-    html, body {
-      width: 210mm;
-      height: 297mm;
-      margin: 0;
-      padding: 0;
-    } }
-    
-   body {
-   zoom: 140%;
-   margin: 0;
-   }    
-
-.container {
+   .body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 18, 18);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    height: auto;
-    }
-
-  .container > div {
-    height: 150mm;
-    display: flex; 
-    gap: 10px;
+    height: 100vh;
   }
-  
+
+.container {
+  width: 71vh;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  zoom: 100%;
+  background-image: linear-gradient(var(--col01), var(--col02), var(--col03));
+}
+/*During the design process, I experimented with various gradient styles such as radial, repeating radial, and linear repeating.
+ However, I found that these styles were overwhelming and created low contrast, which negatively impacted the accessibility of the site. 
+ In order to maintain accessibility, I would have had to make the boxes a solid color, which would have compromised the transparency and layering effects that are important design elements.
+ Instead, I opted to keep the transparency of the boxes intact while using a simpler gradient style that strikes a balance between accessibility and aesthetics. */
+
+.container > div {
+  display: flex;
+  gap: 10px;
+}
+
 .box1 {
-    background-color: rgb(212, 111, 192);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:75mm;
-    width: 50mm;
-    position: relative;
-    z-index: 1;
-    right: 5mm;
-  }
+  width:28%;
+  height:29%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  left: 3%;
+  top: 0;
+}
 
-  .box2 {
-    background-color: rgb(71, 45, 66);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height: 55mm;
-    width: 53mm;
-    position: relative;
-    z-index: 1;
-    right:-15mm;
-  }
-   
-  .box3 {
-    background-color: rgb(255, 0, 0);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:108mm;
-    width: 43mm;
-    position: relative;
-    z-index: 1;
-    right: -63px;
-  }
-
-  .box4 {
-    background-color: rgb(132, 24, 198);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:55mm;
-    width: 50mm;
-    position: relative;
-    z-index: 2;
-    top: -100mm;
-    left: -32mm;
-  }
-
-  .box5 {
-    background-color: rgb(93, 26, 188);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:65mm;
-    width: 55mm;
-    position: relative;
-    z-index: 2;
-    top: -110mm;
-    left: -24mm;
-  }
-
-  
-
- .box6 {
-    background-color: rgb(208, 121, 50);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:40mm;
-    width: 177.9mm;
-    flex-grow: 1;
-    position: relative;
-    z-index: 3;
-    top: -193mm;
-    left: 3mm;
-    }
+/*In order to showcase the layering effect of the overlapping boxes, I decided to make them a low opacity color.
+By keeping the box color simple, I was able to put more attention on the smaller design elements like borders and backgrounds.
+This allowed me to add intricate details to these elements while maintaining an overall balanced look. 
+Additionally, this approach allowed me to incorporate stronger colors elsewhere on the page without overwhelming the viewer or creating low contrast.*/ 
 
 
-  .box7 {
-    background-color: rgb(76, 196, 88);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:68mm;
-    width: 63mm;
-    position: relative;
-    z-index: 2;
-    top: -283mm; 
-    left: 25mm;
-  }
+.box2 {
+  width: 28%;
+  height: 23%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  left: 0%;
+  top: 23%;
+}
 
-  .box8 {
-    background-color: rgb(216, 214, 61);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:75mm;
-    width: 95mm;
-    position: relative;
-    z-index: 1;
-    top: -301mm; 
-    left: -20mm;
-  }
+.box3 {
+  width: 34%;
+  height: 23%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  left: 41.50%;
+  top: 0%;
+}
 
-  .box9 {
-    background-color: rgb(72, 145, 177);
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    height:86mm;
-    width: 58mm;
-    position: relative;
-    z-index: 1;
-    top: -301mm; 
-    left: -18.8mm;
-  }
+.box4 {
+  width: 23%;
+  height: 46%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
 
+.box5 {
+  width: 37%;
+  height: 29%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  right: 0%;
+  top: 17%;
+  left: 32.5%
+}
+
+.box6 {
+  width: 100%;
+  height: 18%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  right: 0%;
+  top: 48%;
+  left: 0%
+}
+
+.box7 {
+  width: 51.5%;
+  height: 28%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  right: 0%;
+  top: 68%;
+  left: 16%
+}
+
+.box8 {
+  width: 37%;
+  height: 26%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  right: 0%;
+  top: 74%;
+  left: 0%
+}
+
+.box9 {
+  width: 31%;
+  height: 32%;
+  background-color: var(--col05);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  position: absolute;
+  right: 0%;
+  top: 68%;
+  right: 0%;
+}
