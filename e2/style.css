@@ -1,0 +1,198 @@
+/* z-index order */
+@font-face {
+  font-family: 'Calibri';
+  src: url('fonts/Calibri Regular.ttf');
+}
+@font-face {
+  font-family: 'Cinzel';
+  src: url('fonts/CinzelDecorative-Bold.ttf');
+}
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/*When designing my website, I knew that color played an important role in creating a visually appealing and cohesive look. To help with this, I utilized paletton.com to create a color palette
+that would work well together. I ultimately decided on a complimentary color scheme of teal/blue and orange. I chose these colors for two reasons - firstly, I personally love this color
+combination and secondly, it reminds me of Europe, which is a place that I connect a lot of my personal baking and cooking with due to my Greek heritage.
+
+To differentiate each recipe section, I decided on a gradient split border at the top and bottom of each section. I found that a border around each area was too busy and overcrowded, which could
+be overwhelming for the user. This subtle and refined design element indicates to the user that they are looking at a new recipe without overpowering the overall layout.
+
+When selecting fonts, I chose Cinzel for titles as it is a fun and eye-catching font while still being legible. This font will grab the user's attention and keep them engaged throughout their
+browsing experience. For the body text, I chose Calibri as it is a professional and easy-to-read font that is clean and modern, which aligned with the overall aesthetic I was aiming for.
+By incorporating these fun and modern design elements, I was able to balance the more serious and informative aspects of the website.
+
+I chose to center the overall design as it made better use of the space considering that the website was not overly crowded with information.
+I experimented with styling everything to the left but found that the negative space was too overpowering, and the balance was not quite there.*/
+
+:root{
+  --col-01:#236167;
+  --col-02:#031618;
+  --col-03:#D66500;
+  --col-04:#79CAD1;
+  --border: 2px solid var(--col-03);
+  --border-image: linear-gradient(45deg, #072b2e, #79CAD1, #D66500, #79CAD1, #072b2e ) 1 0;
+}
+
+h1{
+  font-family: 'Cinzel';
+  font-size: 50px;
+  text-align: center;
+}
+
+h2{
+  font-family: 'Cinzel';
+  font-size: 30px;
+  text-align: center;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+  color: var(--col-02);
+  padding: 2vw;
+  zoom: 120%;
+}
+
+.RecipeBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  margin: auto;
+  margin-top: 15px;
+  border-image: var(--border-image);
+  padding-bottom: 13px;
+  border-width: 4.5px;
+  margin-bottom: 4px;
+}
+
+.FilterSection{
+  display: flex;
+  flex-direction: row;
+  font-family:'Calibri';
+  font-size: 20px;
+  margin: auto;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.FilterBox{
+  color: var(--col-03);
+}
+
+.FilterButton{
+color: var(--col-02);
+}
+
+.SelectedFilter{
+color: var(--col-03);
+}
+
+a:visited{
+  color: var(--col-04);
+}
+
+a {
+  color: var(--col-02)
+}
+
+.RecipeName{
+  margin-top: 13px;
+}
+
+.Author{
+font-family: 'Cinzel';
+font-size: 18px;
+text-align: center;
+color: var(--col-03);
+}
+
+.RecipeImg {
+  display: flex;
+  margin: auto;
+}
+
+.Attribution{
+  font-family:'Calibri';
+  font-size: 13px;
+  text-align: center;
+  color: var(--col-02);
+}
+
+.Publisher{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.Cuisine{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+
+}
+
+.TimeToCook{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.SkillLevel{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.Course{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.Servings{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.Dietary{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.DatePublished{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.DateUpdated{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
+.SpecialEquipment{
+  font-family:'Calibri';
+  font-size: 18px;
+  text-align: center;
+  color: var(--col-04);
+}
+
