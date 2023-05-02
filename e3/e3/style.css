@@ -181,6 +181,12 @@ the overall function was different to a hyperlink but kept the rest of the desig
   background-color: rgb(145, 231, 231);
 }
 
+#load-link:active {
+  cursor: pointer;
+  color: var(--col-05);
+  background-color: rgb(66, 83, 233);
+}
+
 /* animation while page is fake loading */
 #load-throbber {
   display: flex;
