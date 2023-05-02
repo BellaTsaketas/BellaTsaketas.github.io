@@ -47,7 +47,7 @@ nav li{
 }
 
 nav li:hover {
-  cursor: pointer;
+  cursor: hand;
 }
 
 section{
@@ -84,6 +84,10 @@ a:hover{
   cursor: pointer;
   color: var(--col-05);
   text-decoration: underline var(--col-05);
+}
+
+a:active {
+  color: rgb(66, 83, 233);
 }
 
 /*To make hyperlinks to other sections on the page more noticeable, I added underlines to signify their function as clickable links.
@@ -132,6 +136,18 @@ li ul{
   background-color: var(--col-06);
   cursor: pointer;
 }
+
+#mode-button:active{
+  color: var(--col-05);
+  background-color: rgb(66, 83, 233);
+  cursor: pointer;
+}
+
+/*I have improved the user experience by adding an :active color change to the buttons and links.
+This helps users confirm that their click has been registered and the action is being taken. 
+With this visual cue, users can feel more confident in their interactions with the website and are more likely to engage with it.
+Moreover, to ensure consistency and clarity, I have kept the color consistent for all 'active' clicks. 
+This allows users to know what to expect and reinforces their understanding of the website's design and functionality. */
 
 /* code for loading page */
 
