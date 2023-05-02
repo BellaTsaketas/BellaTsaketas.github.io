@@ -1,0 +1,285 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  --col-05:#d87697;
+  --col-06:#91e7e7;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  --transition-speed: 0.7s; 
+  }
+  
+  /*From a UX perspective, the transition speed between light and dark mode can greatly affect the user experience.
+  If the transition is too slow, it can be frustrating for the user and create a feeling of lag or delay in the website's response.
+  On the other hand, if the transition is too quick, it can feel abrupt and jarring, creating a sense of disorientation for the user.
+  After lots of experimentation and asking friends to 'review' different speeds I chose 0.7s.
+  By analazing friends reactions as well as my own I found that 0.7s struck a balance between being fast enough to not cause frustration,
+  while still being slow enough to provide a sense of continuity and allow the user to adjust to the new color scheme.*/
+
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: color var(--transition-speed), background-color var(--transition-speed);
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 1rem;
+}
+
+nav li:hover {
+  cursor: hand;
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+a:hover{
+  cursor: pointer;
+  color: var(--col-05);
+  text-decoration: underline var(--col-05);
+}
+
+a:active {
+  color: rgb(66, 83, 233);
+}
+
+/*To make hyperlinks to other sections on the page more noticeable, I added underlines to signify their function as clickable links.
+Additionally, I changed the cursor to a pointer, providing further indication that they are interactive. To maintain consistency and reinforce feedback,
+I kept the hover colour consistent with the colour used for buttons throughout the site. This way, users can easily associate the feedback from clicking
+the hyperlinks with the feedback from clicking buttons.*/
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+#mode-button{
+  float: right;
+  /* note the use of position: sticky to keep the button on the page even with scrolling */
+  position: sticky;
+  top: 1rem;
+  color: var(--col-06);
+  background-color: var(--col-05);
+}
+
+#mode-button:hover{
+  color: var(--col-05);
+  background-color: var(--col-06);
+  cursor: pointer;
+}
+
+#mode-button:active{
+  color: var(--col-05);
+  background-color: rgb(66, 83, 233);
+  cursor: pointer;
+}
+
+/*I have improved the user experience by adding an :active color change to the buttons and links.
+This helps users confirm that their click has been registered and the action is being taken. 
+With this visual cue, users can feel more confident in their interactions with the website and are more likely to engage with it.
+Moreover, to ensure consistency and clarity, I have kept the color consistent for all 'active' clicks. 
+This allows users to know what to expect and reinforces their understanding of the website's design and functionality. */
+
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* changing button to look like a link */
+#load-link{
+  line-height: 1rem;
+  border: 0;
+  text-decoration: underline;
+  background: rgb(216, 118, 151);
+}
+
+/*To make it clear that the button is clickable, I added an underline to simulate a hyperlink - a recognizable visual cue that users associate with interactive elements.
+Additionally, to provide more visual feedback and enhance the user experience, I made the colour of the box and the text change when the user hovers over the button.
+This creates a more interactive and responsive feel, indicating to the user that they are interacting with a dynamic element. To further reinforce this, I changed the
+cursor to a pointer on hover, which is a standard cursor style for clickable elements. All of these design decisions work together to create a clear and intuitive way for
+the user to know that they can click on the button to load the page.
+
+For the 'mode-button', I wanted to maintain consistency with the overall design as I felt changing it would confuse the user. I removed the underline as 
+the overall function was different to a hyperlink but kept the rest of the design the same.*/
+
+#load-link:hover {
+  cursor: pointer;
+  color: var(--col-05);
+  background-color: rgb(145, 231, 231);
+}
+
+#load-link:active {
+  cursor: pointer;
+  color: var(--col-05);
+  background-color: rgb(66, 83, 233);
+}
+
+/* animation while page is fake loading */
+#load-throbber {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100px;
+  height: 100px;
+  display: none;
+  rotate: 270deg;
+  margin-top: -85px;
+  /* we also initially set display to none so it only shows once the link is clicked */
+}
+
+/* I selected the bouncing animation to ensure user engagement and add fun to the user experience. After testing different loading indicators such as a loading bar,
+spinning circle, and percentage bar, I found that the bouncing animation was the most effective. The spinning circle is a common loading indicator and I wanted something more
+captivating and hypnotic to keep the user engaged during the wait time. While the percentage bar was a good option, I found myself getting impatient watching the number slowly
+increase over 10 seconds and would often ask myself, "Why isn't it faster?" Without any numerical value, I felt more engrossed and curious, anticipating when the change would occur.
+The playful motion of the bouncing ball kept me engaged and added a bit of delight to the experience.*/
+
+#load-throbber div {
+  width: 20px;
+  height: 20px;
+  background: rgb(216, 118, 151);
+  opacity: 0.1;
+  border-radius: 50%;
+  animation: load-throbber 0.5s cubic-bezier(.19, .57, .3, .98) infinite alternate;
+}
+
+
+/*When selecting the optimal speed for this animation, I meticulously experimented with various options until I arrived at 0.5 seconds, which proved to be the optimal choice.
+Speeds that were faster than this felt jarring and unsettled. Conversely, slower speeds felt sluggish and conveyed the impression that the page was taking an extended period to load.
+The ultimate objective was to captivate users' attention and sustain their interest throughout the loading process without giving the impression that the page was buffering.
+The speed of 0.5 seconds was ideal since it was quick enough to maintain engagement while avoiding boredom or the impression that the webpage was taking too long to load.*/
+
+
+@keyframes load-throbber {
+  from {transform: translateX(0)}
+  to {transform: translateX(-100px)}
+}
+
+#load-throbber div:nth-child(2){
+  animation-delay: 0.1s;
+  opacity: 0.3;
+}
+#load-throbber div:nth-child(3){
+  animation-delay: 0.2s;
+  opacity: 0.5;
+}
+#load-throbber div:nth-child(4){
+  animation-delay: 0.3s;
+  opacity: 0.7;
+}
+#load-throbber div:nth-child(5){
+  animation-delay: 0.4s;
+  opacity: 0.9;
+}
+#load-throbber div:nth-child(6){
+  animation-delay: 0.5s;
+  opacity: 1;
+}
+
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
