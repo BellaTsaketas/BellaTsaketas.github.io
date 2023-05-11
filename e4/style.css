@@ -1,0 +1,161 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root{
+  --col-01:#f4c4d4;
+  --col-02:#ea92ab;
+  --col-03:#61567d;
+  --col-04:#9085d0;
+  --col-05:#8c76be;
+  --col-06:#af7fc2;
+  --border: 1px solid var(--col-02);
+}
+
+/*I selected these colors with the aim of staying true to the video's purple-toned theme. 
+To avoid overwhelming the user, I used softer pastel tones in the video player design and background to create contrast and emphasize the video content while complementing its colors.
+The resulting palette evokes a charming, lo-fi style that balances out the video's energetic and neon aesthetic. 
+You can view the exact palette used at this link: https://lospec.com/palette-list/cloudfrenzy.*/
+
+body{
+  background-color: var(--col-03);
+}
+
+.video-player-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* becuase I want to overlay the play icon on the video they need to be in their own wrapper */
+.video-element-wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+#videoElement{
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+#videoPlayOverlay{
+  width: 8rem;
+  height: 8rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  opacity: 0.6;
+  display: none;
+}
+
+.video-controls-wrapper{
+  display: flex;
+  justify-content: center;
+  border: 3px solid #a250ff;
+}
+
+/*I decided to add a border around the controls section to enhance its visual appeal.
+The contrasting color of the border against the pink loading bar not only looks great aesthetically, but it also emphasizes the controls, making them stand out more prominently.
+The border effectively highlights the area and draws the viewer's attention to the buttons, making it easier for them to interact with the controls.
+Overall, I believe that this simple addition greatly enhances the usability and overall look and feel of the video player.*/
+
+/* this overwrites the above display:flex - something which is then undone when the JS loads */
+#controlsWrapper{
+  display: none;
+}
+
+.video-control-button{
+  width: 2rem;
+  height: 2rem;
+  padding: .1rem;
+  border: none;
+  cursor: pointer;
+}
+.video-control-button:hover{
+  background-color: var(--col-05);
+}
+.video-control-button:active{
+  background-color: var(--col-06);
+}
+.button-icon{
+  pointer-events: none;
+}
+
+/*To provide clear visual feedback to the user when they interact with the interface, the buttons change colour on hover and click to signal to the user that they are interacting
+with the player in the intended way. When the user hovers over a button, the color change signals that they are hovering over an interactive element. When the user clicks on a button,
+the color change indicates that the player has received the input and is responding appropriately. By using this technique, users can easily identify the interactive elements of the
+player and feel confident in their ability to use it. This also applies to the curser changing.*/
+
+#playButton{
+  background-image: url('./icons/play.svg');
+  transform: scale(0.8);
+}
+
+#muteButton{
+  background-image: url('./icons/mute.svg');
+  transform: scale(0.8);
+}
+
+#fullscreenButton{
+  background-image: url('./icons/fullscreen-line-1.svg');
+  transform: scale(0.8);
+}
+
+#fullscreenButton:hover{
+  transform: scale(1);
+}
+
+/*To improve the usability of the video player, I made the decision to apply a hover effect on the fullscreen button.
+By transforming all buttons to 0.8 and then scaling the fullscreen button to 1 on hover, the button appears to expand and gives the user the visual feedback
+they need to understand that this button will enter fullscreen mode. This approach effectively signals to the user what to expect, which can greatly improve
+the overall user experience.
+However, I did not apply this scaling effect to other buttons in the video player.
+This is because adding this effect to other buttons could potentially confuse the user and make it harder for them to differentiate between the different types of buttons.
+By applying this effect specifically to the fullscreen button, users can easily identify the button that will enter fullscreen mode and interact with it without any confusion.*/ 
+
+
+
+.video-progress-bar{
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 2rem;
+  flex-grow: 1;
+  cursor: pointer;
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+}
+::-moz-progress-bar {
+  background-color: var(--col-02);
+}
+
+::-webkit-progress-bar {
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+}
+::-webkit-progress-value {
+  background-color: var(--col-02);
+}
+
+.timeline-loading{
+  background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);
+  background-size: 200% 100%;
+  animation: loadingAnimation 4s linear infinite;
+}
+
+@keyframes loadingAnimation {
+  100%{
+    background-position: 50% 0%;
+  }
+}

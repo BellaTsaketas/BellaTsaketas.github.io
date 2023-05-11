@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player Experiment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="playerControls.js" defer></script>
+
+  </head>
+
+  <body>
+
+    <!-- this element holds all of the media player -->
+    <div class="video-player-wrapper">
+      <!-- this element holds the video element and the overlay -->
+      <div class="video-element-wrapper">
+
+        <video id="videoElement" controls>
+          <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4" type="video/mp4">
+        </video>
+
+        <img id="videoPlayOverlay" src="./icons/play.svg">
+
+      </div>
+      <!-- this element holds all of the custom controls -->
+      <div class="video-controls-wrapper" id="controlsWrapper">
+
+        <button class="video-control-button" id="playButton"></button>
+
+        <button class="video-control-button" id="muteButton"></button>
+
+        <button class="video-control-button" id="fullscreenButton"></button>
+
+      <!--When designing the video player, I made the decision to include a fullscreen option for two main reasons.
+      Firstly, a fullscreen option provides users with a better view of the video, allowing them to appreciate the quality and detail of the content.
+      This is particularly important for artistic videos with high graphic detail, such as the one on this webpage, as users may miss out on important aspects of the video without the ability to view it in fullscreen mode.
+      By offering a fullscreen option, the video player provides users with a more immersive and engaging experience, which can lead to increased user engagement and satisfaction.
+
+      Secondly, from an accessibility standpoint, I believe that a fullscreen option is necessary to provide an optimal viewing experience for all users.
+      For instance, as someone who wears glasses, I find that the fullscreen option helps me to see the video more clearly and with fewer distractions.
+      While the video player controls are not overly distracting, some users may benefit from having no other elements on the screen to take their attention away from the video.
+      By offering a fullscreen option, the video player provides users with a choice and accommodates their needs and preferences, which can help to improve overall accessibility and user satisfaction.-->
+
+        <progress class="video-progress-bar" id="progressBar" value="0"></progress>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
