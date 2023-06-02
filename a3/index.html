@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"defer></script>
+
+    <h1>Audio Visualisers</h1>
+    <h2>created by Isabella Tsaketas</h2>
+
+  </head>
+ 
+  <body>
+
+      <p>
+        <strong>Instructions for Using the Visualisers:</strong>
+        <br>
+        <br>
+        <strong>
+        <em>Choose your colours: </em>
+        </strong>
+        <br>
+        - Utilise the colour pickers to modify the background colour and bar visual colour for Visualiser One.
+        <br>
+        - Customise colours during playback: Feel free to adjust these colours while the visualiser is in motion.
+        <br>
+        - Alter the background colour: Utilise the colour picker to change the background colour for Visualiser Two.
+        <br>
+        <br>
+        <strong>
+        <em>Using the Visualisers:</em>
+        </strong>
+        <br>
+        - Uploading an MP3 file:
+        <br>
+        &emsp;- Click on the "Upload File" button to select and upload an MP3 file.
+        <br>
+        &emsp;- The visualiser will immediately commence playing the audio from the uploaded file.
+        <br>
+        <br>
+        <strong>
+        - Control the audio playback:
+        </strong>
+        <br>
+        &emsp;- Adjust the volume, play/pause the audio, or navigate through the audio file using the audio control panel.
+        <br>
+        <br>
+        <strong>
+        - No MP3 file available?
+        </strong>
+        <br>
+        &emsp;- If you do not possess an MP3 file, click on the provided link to access downloadable files that are free from copyright restrictions.
+        <a href="#download-links">Go to Download Links</a>
+        <br>
+        <br>
+        <strong>Why should you contemplate changing the colours?</strong>
+        <br>Embracing the boundless realm of creativity, I encourage users to delve into the transformative potential of colours in connection with the sounds they encounter. 
+        <br>Envision a song, a musical composition, or a sound that evokes pure happiness. 
+        <br>Now, ponder the possibilities: Which colour could augment that jubilant sensation, offer a fresh perspective, or harmonise seamlessly with it? The decision is yours to make.
+        <br>Moreover, do not shy away from unleashing your imagination and embarking on ventures with vibrant and captivating colour combinations that may not possess an explicit meaning. 
+        <br>This open-ended approach fosters infinite creative exploration and provides an opportunity to craft exceptional audiovisual experiences that transcend conventional boundaries.
+        <br>
+        <strong>Have fun exploring the visualizers and enjoy the audio visualizations!</strong>
+      </p>
+      
+      <h3>Visualiser 1</h3>
+
+      <div id="container">
+        <canvas id="canvas1"></canvas>
+        <input type="file" id="fileupload" accept="audio/*" />
+        <audio id="audio1" controls></audio>
+        <p2>background colour</p2>
+        <p3>bar visuals colour</p3>
+        <input type="color" id="colorPicker" value="#ffffff">
+        <input type="color" id="bccolorPicker" value="#ffffff">
+      </div>
+    
+      <h3>Visualiser 2</h3>
+
+      <div id="container2">
+        <canvas id="canvas2"></canvas>
+        <input type="file" id="fileupload2" accept="audio/*" />
+        <audio id="audio2" controls></audio>
+        <p4>background colour</p4>
+        <input type="color" id="bccolorPicker2" value="#ffffff">
+      </div>
+
+      <button class="collapsible">Click to read about my design decisions and process</button>
+      <div class="content">
+       <p>For this interactive design project, I focussed on the elements of playfulness and feedback. My aim was to create an enjoyable and engaging interface that combines music and visual art. 
+        Having conducted extensive research on music and colour theory in the past, I have developed a profound interest in the concept of synesthesia. I find it fascinating how sound, colour, and emotion can intertwine and influence one another.
+        In order to empower users and enable them to forge a deeper connection with the music, I wanted to provide them with the ability to customize the colours according to their preferences.
+       </p>
+       <p>
+        By allowing users to modify the colours, they can enhance the way the music resonates with their emotions. For instance, if a particular song evokes feelings of happiness, I personally associate the colour pink with such emotions.
+        Thus, selecting pink hues would amplify the joyful experience for me, hence I hope that users can amplify their own feelings with the colour picker.
+        This feature offers a unique opportunity for users to personalize their audiovisual journey, creating a harmonious blend of sound and colour that aligns with their individual perceptions and emotional responses.
+        By embracing the diversity of these connections between music, colour, and emotion, the interactive design fosters a more immersive and meaningful experience for users.
+       </p>
+       <p>
+        According to a 2015 study by YouGov, blue emerged as the most popular colour worldwide. While I couldn't incorporate a colour picker for the second visualiser, I opted for a mix of blue shades, intending to appeal to a wide range of users.
+        However, I still provided the option to customize the background colour to personalize the visualiser further.
+        To ensure clarity and intuitiveness, I employed visual cues to indicate interactive elements. The cursor changes to a hand icon, and the background colour subtly differentiates interactive elements from static elements, effectively signalling their interactivity.
+        In the section that displays whether a file has been chosen or not, I made sure to use a consistent background colour to ensure legibility even if users decide to change the background colour to a shade close to the default one.
+       </p>
+       <p>
+        To guide users effectively, I included clear and concise instructions at the top of the page, prompting users to read them before proceeding. This approach minimizes user errors and confusion.
+        To maintain a focus on the visualisers and avoid distractions, I added a collapsible text box to contain additional information. This design choice enhances the interface's neatness and allows users to concentrate solely on the visualisers when desired.
+        To optimize the viewing experience, I designed the canvas size to occupy most of the screen when each visualiser is being displayed, maximizing immersion and engagement.
+       </p>
+       <p>
+        Considering accessibility, I ensured all text maintained high contrast to accommodate viewers with slight visual impairments or other accessibility needs.
+        I selected the bar visualiser format as it is a familiar and commonly encountered form of the visualiser. The element of familiarity helps users feel more comfortable with the interactions, knowing what to expect.
+        Visualiser two, on the other hand, offers a more unique representation of the music, which encourages exploration, enhances the understanding, and generates excitement.
+        To prevent accidental interruptions to the flow of the experience, I positioned the audio player on the right side of the screen. This placement minimizes the risk of human error, particularly when users are changing colours consistently throughout the sound.
+       </p>
+       <p>
+        To ensure clarity and avoid confusion, I created a gap between the visualisers, clearly delineating the controls and functions associated with each visualiser.
+        Recognizing that some users may not have readily available mp4 files, I included a section at the bottom of the page with downloadable sounds. 
+        By hyperlinking to that section, users who already have files can conveniently scroll down to access the visualisers without needing to navigate through potentially irrelevant information.
+       </p>
+       <p>
+        I conducted rigorous user testing during this process to ensure the successful achievement of these objectives. Initially, the clarity of the instructions and the apparent purpose of the colour picker was not optimal.
+        However, I made significant improvements to address these concerns. Additionally, the initial colour palette was perceived as lacking playfulness, as reported by the users. Consequently, I made the necessary adjustments to create a more engaging experience.
+        To strike a balance between allowing customization and preventing an overwhelming number of colours, I opted for a larger canvas size. This design choice effectively minimizes distractions while maintaining focus on the chosen colours.
+       </p>
+      </div>
+  
+      <h4 id="download-links">Download MP3 Files:</h4>
+       <ul>
+        <li><a href="music/Anxiety - NEFFEX.mp3" download>Anxiety - NEFFEX</a></li>
+        <li><a href="music/Dream It - TrackTribe.mp3" download>Dream It - Track tribe</a></li>
+        <li><a href="music/Golden Cage - Jimena Contreras.mp3" download>Golden Cage - Jimena Contreras</a></li>
+        <li><a href="music/Natural Light - Chris Haugen.mp3" download>Natural Light - Chris Haugen</a></li>
+        <li><a href="music/World's Sunrise - Jimena Contreras.mp3" download>Worl's Sunrise - Jimena Contreras</a></li>
+      </ul>
+
+
+
+  </body>
+
+</html>
+
