@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nicholas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Linking CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+  <!-- Custom CSS for the gallery -->
+  <style> 
+  .bio-text {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 15px;
+  }
+  @media (min-width: 768px) {
+  .bio-text {
+    font-size: 22px; /* Adjust the font size for smaller screens */
+  }
+}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
+    <div class="container">
+        <a class="navbar-brand" href="#">Isabella Tsaketas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <section class="bgimage" id="home" style="height:50vh; background: url('images/heroImage.png'); background-size:cover; position:relative;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+          <h2 class="hero_title">A Multisensory Symphony</h2>
+          <p class="hero_desc">Uniting Colour, Sound and Emotion</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="bio" class="bio-text mt-5">
+    <div class="container">
+      <p> In this project, I explored the concept of qualia—subjective experiences unique to each individual, such as emotions, which cannot be fully expressed through words alone. Inspired by philosopher Daniel Dennett's discussions on qualia and artist Wassily Kandinsky's synesthetic approach to art, I embarked on a journey to express my emotions using colour and sound. By tracking my daily emotions with an app, I created semantic colour maps that visually represented my feelings. These maps were then brought to life through fluid, dynamic visuals paired with carefully curated sounds to reflect the complexity and depth of each emotion. My final presentation offers a multisensory experience that provides a deeper understanding of my emotional landscape over a month.</p>
+      <p>View the virtual gallery below in spatial</p>
+    </div>
+  </section>
+
+<section class="virtual_gallery" id="vgallery">
+  <h1>Multisensory Symphony Virtual Gallery</h1>
+  <iframe src="https://www.spatial.io/s/Multisensory-Symphony-virtual-gallery-64646686f1caf0962f065b1c?share=7777041623233686489" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+</section>
+
+     <!-- load javascript after loading all html content -->
+     <script src="script/script.js"></script>
+
+     <!-- footer section-->
+<footer id="footer">
+   <div class="container-fluid">
+       <!-- social media icons -->
+       <div class="social-icons mt-4">
+           <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+           <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+           <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+       </div>
+   </div>
+ </footer>
+</body>
+</html>
